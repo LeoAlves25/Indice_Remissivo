@@ -1,4 +1,4 @@
-import java.util.regex.Matcher;
+import java.text.Normalizer;
 import java.util.regex.Pattern;
 
 class HashColisaoExterior {
@@ -47,15 +47,14 @@ class HashColisaoExterior {
 
 	public int tratarElemento(String elemento){
 
-		String regex = "[^a-zA-Z0-9\\s]";
+		String regex = "\\p{InCombiningDiacriticalMarks}+";
         
-        Pattern pattern = Pattern.compile(regex);
-        
-        Matcher matcher = pattern.matcher(elemento);
-        
-        String resultado = matcher.replaceAll(" ");
+		String normalizer = Normalizer.normalize(elemento, Normalizer.Form.NFD);
 
-		int dado = resultado.toUpperCase().charAt(0);
+		Pattern.compile(regex);
+		Pattern pattern = Pattern.compile("\\p{InCombiningDiacriticalMarks}+");
+
+		int dado = pattern.matcher(normalizer).replaceAll("").toUpperCase().charAt(0);
 
 		return dado - 65;
 	}

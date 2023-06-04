@@ -14,9 +14,13 @@ class Main{
 
         HashColisaoExterior palavrasChaves = new HashColisaoExterior(26);
 
+        
+
         while (chave.hasNext()) {
             String palavra = chave.next();
         
+            palavra.replace(",", "").replace(".","").replace(";","").replace(":","").replace("?", "").replace("!", "");
+
             palavrasChaves.insere(palavra);
         }
 

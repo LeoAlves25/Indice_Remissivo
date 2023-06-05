@@ -67,7 +67,7 @@ class ArvoreBinariaBusca {
 			return;
 
 		this.emOrdem(nodo.esquerdo);
-		System.out.println(nodo.elemento.chave + " " );
+		System.out.print(nodo.elemento.chave + " " );
 		nodo.elemento.ocorrencias.imprime();
 		this.emOrdem(nodo.direito);
 	}
@@ -187,7 +187,7 @@ class ArvoreBinariaBusca {
 			return false;
 		}
 
-		if (elemento.chave.compareTo(nodo.elemento.chave) <= 0) {
+		if (elemento.chave.compareTo(nodo.elemento.chave) < 0) {
 			return this.busca(elemento, nodo.esquerdo);
 		} else if (elemento.chave.compareTo(nodo.elemento.chave) > 0) {
 			return this.busca(elemento, nodo.direito);

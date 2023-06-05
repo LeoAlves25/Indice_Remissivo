@@ -35,7 +35,6 @@ public class ListaEncadeada {
     public void imprime() {
 
         if (this.nElementos == 0) {
-            System.out.println("Lista vazia!");
             return;
         }
 

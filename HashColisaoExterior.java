@@ -37,6 +37,16 @@ class HashColisaoExterior {
 		this.nElementos++;
 	}
 	
+	public void insereLinha(String texto, int Elemento) {
+		int endereco = funcaoHashDiv(texto);
+
+		PalavraChave palavra = new PalavraChave(texto);
+
+		this.vetor[endereco].insereLinha(palavra,Elemento);
+
+		
+	}
+	
 	public boolean contem(String elemento) {
 		int endereco = funcaoHashDiv(elemento);
 

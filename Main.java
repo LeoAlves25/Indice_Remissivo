@@ -21,7 +21,7 @@ class Main{
         while (chave.hasNext()) {
             String palavra = chave.next();
         
-            palavra = palavra.replace(",", "").replace(".","").replace(";","").replace(":","").replace("?", "").replace("!", "");
+            palavra = removerPontuacao(palavra);
 
             palavrasChaves.insere(palavra);
         }
@@ -34,7 +34,8 @@ class Main{
         	while (palavraTexto.hasNext()) {
         		String text = palavraTexto.next();
 
-                text = text.replace(",", "").replace(".","").replace(";","").replace(":","").replace("?", "").replace("!", "");
+                text = removerPontuacao(text);
+
         		if(palavrasChaves.contem(text)) {
         			palavrasChaves.insereLinha(text,linha);
         			
@@ -44,5 +45,11 @@ class Main{
 
         palavrasChaves.imprime();
 
+    }
+
+    public static String removerPontuacao(String palavra) {
+        palavra = palavra.replaceAll("[^-a-zA-Z0-9\u00C0-\u00FF]", "");
+        String cap = palavra.substring(0, 1).toUpperCase() + palavra.substring(1);
+        return cap;
     }
 }

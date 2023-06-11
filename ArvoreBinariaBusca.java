@@ -112,7 +112,6 @@ class ArvoreBinariaBusca {
 	}
 	
 	public void insereLinha(PalavraChave elemento, int linha, Nodo nodo) {
-		Nodo novo = new Nodo(elemento);
 
 		if (nodo == null) {
 			return;
@@ -120,9 +119,7 @@ class ArvoreBinariaBusca {
 
 		if (elemento.chave.compareTo(nodo.elemento.chave) < 0) {
 			this.insereLinha(elemento, linha, nodo.esquerdo);
-		}
-
-		else if (elemento.chave.compareTo(nodo.elemento.chave) > 0) {
+		}else if (elemento.chave.compareTo(nodo.elemento.chave) > 0) {
 			this.insereLinha(elemento,linha , nodo.direito);
 		}else {
 			nodo.elemento.ocorrencias.insereFinal(linha);

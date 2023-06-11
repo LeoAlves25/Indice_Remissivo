@@ -67,7 +67,7 @@ class ArvoreBinariaBusca {
 			return;
 
 		this.emOrdem(nodo.esquerdo);
-		System.out.print(nodo.elemento.chave + " " );
+		System.out.print(nodo.elemento.chave + " ");
 		nodo.elemento.ocorrencias.imprime();
 		this.emOrdem(nodo.direito);
 	}
@@ -106,11 +106,11 @@ class ArvoreBinariaBusca {
 			}
 		}
 	}
-	
+
 	public void insereLinha(PalavraChave elemento, int linha) {
 		this.insereLinha(elemento, linha, this.raiz);
 	}
-	
+
 	public void insereLinha(PalavraChave elemento, int linha, Nodo nodo) {
 
 		if (nodo == null) {
@@ -119,10 +119,12 @@ class ArvoreBinariaBusca {
 
 		if (elemento.chave.compareTo(nodo.elemento.chave) < 0) {
 			this.insereLinha(elemento, linha, nodo.esquerdo);
-		}else if (elemento.chave.compareTo(nodo.elemento.chave) > 0) {
-			this.insereLinha(elemento,linha , nodo.direito);
-		}else {
-			nodo.elemento.ocorrencias.insereFinal(linha);
+		} else if (elemento.chave.compareTo(nodo.elemento.chave) > 0) {
+			this.insereLinha(elemento, linha, nodo.direito);
+		} else {
+
+			if (!nodo.elemento.ocorrencias.contem(linha))
+				nodo.elemento.ocorrencias.insereFinal(linha);
 		}
 	}
 

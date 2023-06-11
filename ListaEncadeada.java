@@ -68,4 +68,19 @@ public class ListaEncadeada {
 
         this.nElementos++;
     }
+
+    public boolean contem(int elemento) {
+
+        Nodo cursor = this.inicio;
+        for (int i = 0; i < this.nElementos; i++) {
+
+            if (cursor.elemento == elemento) {
+                return true;
+            }
+
+            cursor = cursor.proximo;
+        }
+
+        return false;
+    }
 }

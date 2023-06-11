@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 class Main{
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        Scanner chave = new Scanner(new File("./Textos/chaves.txt"), "UTF-8");
-        Scanner texto = new Scanner(new File("./Textos/texto.txt"), "UTF-8");
+        Scanner chave = new Scanner(new File("./Textos/chaves2.txt"), "UTF-8");
+        Scanner texto = new Scanner(new File("./Textos/texto2.txt"), "UTF-8");
         int linha = 0;
         
         //Pegar numero da linha (aumentando cada vez que sobe a linha
-        PrintStream ps = new PrintStream("./Textos/indice1.txt", "UTF-8");
+        PrintStream ps = new PrintStream("./Textos/indice2.txt", "UTF-8");
         System.setOut(ps);
 
         HashColisaoExterior palavrasChaves = new HashColisaoExterior(26);

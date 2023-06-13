@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 class Main{
     public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException {
-        Scanner chave = new Scanner(new File("./Textos/chaves2.txt"), "UTF-8");
-        Scanner texto = new Scanner(new File("./Textos/texto2.txt"), "UTF-8");
+        Scanner chave = new Scanner(new File("./Textos/exemplos2/chaves4.txt"));
+        Scanner texto = new Scanner(new File("./Textos/exemplos2/texto4.txt"));
         int linha = 0;
         
         //Pegar numero da linha (aumentando cada vez que sobe a linha
-        PrintStream ps = new PrintStream("./Textos/indice2.txt", "UTF-8");
+        PrintStream ps = new PrintStream("./Textos/exemplos2/indice4.txt", "UTF-8");
         System.setOut(ps);
 
         HashColisaoExterior palavrasChaves = new HashColisaoExterior(26);
@@ -36,10 +36,12 @@ class Main{
 
                 text = removerPontuacao(text);
 
-        		if(palavrasChaves.contem(text)) {
-        			palavrasChaves.insereLinha(text,linha);
-        			
-        		}
+                if(text.length() > 0){
+                    if(palavrasChaves.contem(text)) {
+                        palavrasChaves.insereLinha(text,linha);
+                        
+                    }
+                }
         	}
         }
 
@@ -48,7 +50,10 @@ class Main{
     }
 
     public static String removerPontuacao(String palavra) {
-        palavra = palavra.replaceAll("[^-a-zA-Z0-9\u00C0-\u00FF]", "");
+        palavra = palavra.replaceAll("[^-a-zA-Z\u00C0-\u00FF]", "").replaceAll("[0-9]","");
+        if(palavra.length() == 0) {
+            return palavra;
+        }
         String cap = palavra.substring(0, 1).toUpperCase() + palavra.substring(1);
         return cap;
     }

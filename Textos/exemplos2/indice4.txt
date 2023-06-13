@@ -1,0 +1,9 @@
+Arma 111 152
+Bolívia 45 103
+Carpinteiro 39 78
+Cristo 1 49 59 69 76 97 104 107 110 117 125 133 140 157 161
+Homem 139 153
+Maria 75 79 119 123 131 150 159
+Medo 1 71
+Professor 8 18
+Traficante 72 106

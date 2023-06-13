@@ -1,0 +1,9 @@
+Ciência 33 39
+Crime 105 113
+Holmes 29 55 79 97 105 115 121 141
+Hotel 7 149 161
+Londres 1 7 11
+Medicina 1 35 37 65 89
+Sangue 89 93 101 105
+Universidade 1 9
+Watson 11 79 159
